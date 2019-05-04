@@ -1,3 +1,19 @@
 <ng-container *ngFor="let item of cartItems">
-  {{ item.description }}
+  <div class="item  u-tiny-border-bottom">
+    <div class="item__image">
+      <img [src]="item.img" [alt]="item.description" />
+    </div>
+    <div class="item__description">
+      <p [innerText]="item.description"></p>
+    </div>
+    <div class="item__size">
+      <span [innerText]="item.size"></span>
+    </div>
+    <div class="item__qty">
+      <span [innerText]="item.qty"></span>
+    </div>
+    <div class="item__price">
+      <span [innerText]="item.price"></span>
+    </div>
+  </div>
 </ng-container>

@@ -22,7 +22,9 @@
         <span [innerText]="item.p_quantity"></span>
       </div>
       <div class="item__price">
-        <span [innerText]="item.p_price"></span>
+        <span>
+          {{ item.p_price * item.p_quantity }}
+        </span>
       </div>
     </div>
   </ng-container>

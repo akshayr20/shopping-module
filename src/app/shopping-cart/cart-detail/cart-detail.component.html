@@ -1,4 +1,4 @@
-<section class="cart">
+<section class="cart" *ngIf="cartTotal$ | async as cartTotal">
   <div class="cart__support">
     <app-contact-us></app-contact-us>
   </div>
@@ -6,18 +6,18 @@
     <div class="promo u-md-border-bottom">
       <span class="promo__description">Enter Promotion Code or Gift Card</span>
       <div class="promo__code">
-        <input type="text" class="default-input-box"/>
+        <input type="text" class="default-input-box" />
         <button class="ui-btn u-md-margin-left">Apply</button>
       </div>
     </div>
     <ul class="cart-summary">
       <li>
         <span>Subtotal</span>
-        <span>$37.00</span>
+        <span>${{ cartTotal }}</span>
       </li>
       <li>
-        <span>Promotion Code JF10 Applied</span>
-        <span>-$7.00</span>
+        <span>Sorry No Promos Available</span>
+        <span>NA</span>
       </li>
       <li class="u-tiny-border-bottom">
         <p>
@@ -31,7 +31,7 @@
           <span>Estimated Total</span>
           <span>Tax Will be applied during checkout</span>
         </p>
-        <span>$30</span>
+        <span>${{ cartTotal }}</span>
       </li>
     </ul>
     <div class="center-flex-end  md-padding-vertical">

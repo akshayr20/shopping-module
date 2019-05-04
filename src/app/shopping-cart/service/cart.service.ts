@@ -220,11 +220,11 @@ const data = {
 export class CartService {
   cartItems$ = new BehaviorSubject([]);
   cartItem$ = new BehaviorSubject({});
+  cartTotal$ = new BehaviorSubject(0);
 
   constructor() {}
 
   getCartItems() {
-    console.log(data);
     this.cartItems$.next(data.productsInCart);
   }
 
@@ -236,12 +236,22 @@ export class CartService {
   removeItemFromCart(id) {
     const index = data.productsInCart.findIndex(item => item.p_id === id);
     data.productsInCart.splice(index, 1);
+    this.getTotal();
     this.cartItems$.next(data.productsInCart);
   }
 
   updateQuantity(id, qty) {
     const index = data.productsInCart.findIndex(item => item.p_id === id);
     data.productsInCart[index].p_quantity = qty;
+    this.getTotal();
     this.cartItems$.next(data.productsInCart);
+  }
+
+  getTotal() {
+    let total = 0;
+    data.productsInCart.forEach(item => {
+      total = total + item.p_price * item.p_quantity;
+    });
+    this.cartTotal$.next(total);
   }
 }

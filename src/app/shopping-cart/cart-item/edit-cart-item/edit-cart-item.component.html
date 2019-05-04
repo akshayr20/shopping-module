@@ -7,12 +7,13 @@
           {{ item.p_name }}
         </span>
         <span class="item__price"> ${{ item.p_price }} </span>
-        <span class="item__color">
+        <!-- <span class="item__color">
           <span class="green-box"></span>
           <span class="white-box"></span>
-        </span>
+        </span> -->
         <div class="item__dropdown-btn">
-          <select [(ngModel)]="quantity">
+          QTY:
+          <select [(ngModel)]="quantity" class="select-btn">
             <option>1</option>
             <option>2</option>
             <option>3</option>

@@ -9,10 +9,13 @@ import { CartService } from '../../service/cart.service';
 })
 export class EditCartItemComponent {
   @Output() closePopUp$ = new EventEmitter<Boolean>();
-  quantity;
   cartItem$: Observable<any>;
+  quantity;
   constructor(private cartService: CartService) {
     this.cartItem$ = this.cartService.cartItem$;
+    this.cartItem$.subscribe(item => {
+      this.quantity = item.p_quantity;
+    });
   }
 
   updateItemQuantity(id) {

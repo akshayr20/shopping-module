@@ -72,3 +72,12 @@
   color: grey;
   cursor: pointer;
 }
+
+.select-btn {
+  cursor: pointer;
+  appearance: none;
+  font-size: 1.6rem;
+  padding: 8px 32px 8px 8px;
+  border-radius: 3px;
+  border: 1px solid grey;
+}

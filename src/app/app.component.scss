@@ -1,0 +1,12 @@
+@import '../assets/sass/main.scss';
+
+.container {
+  max-width: 120rem;
+  margin: 0.5rem auto;
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}

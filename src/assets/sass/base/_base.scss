@@ -19,7 +19,8 @@ html {
 
 body {
   font-family: Roboto, 'sans-serif';
+  color: $color-text;
   font-weight: 300;
   line-height: 1.6;
-  font-size: 1.6rem;
+  font-size: $default-font-size;
 }

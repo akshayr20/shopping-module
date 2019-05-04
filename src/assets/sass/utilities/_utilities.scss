@@ -23,6 +23,12 @@
 
 // flex-generic-class
 
+.center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .center-flex-end {
   display: flex;
   justify-content: flex-end;

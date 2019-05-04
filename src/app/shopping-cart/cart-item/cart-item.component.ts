@@ -8,6 +8,7 @@ import { CartItems } from '../models/cartItems';
 })
 export class CartItemComponent implements OnInit {
   @Input() cartItems: CartItems;
+  isEditPopUpVisible = false;
 
   constructor() {}
 

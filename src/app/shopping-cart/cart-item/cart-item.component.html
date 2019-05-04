@@ -13,7 +13,7 @@
           <li>Style: 123</li>
           <li>Color: blue</li>
         </ul>
-        <app-item-quick-edit></app-item-quick-edit>
+        <app-item-quick-edit (editItem$)="isEditPopUpVisible = true"></app-item-quick-edit>
       </div>
     </div>
     <div class="item__size">
@@ -27,3 +27,5 @@
     </div>
   </div>
 </ng-container>
+
+<app-edit-cart-item *ngIf="isEditPopUpVisible"></app-edit-cart-item>

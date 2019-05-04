@@ -1,0 +1,18 @@
+.ui-btn {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #666666;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid #979ea3;
+  padding: 0.8rem 1.6rem;
+
+  &__primary {
+    box-shadow: 0 4px 10px 1px rgba(37, 92, 183, 0.3);
+    background-color: #4285f4;
+    border-color: #4285f4;
+    color: #ffffff;
+  }
+
+}

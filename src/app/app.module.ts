@@ -8,6 +8,7 @@ import { EditCartItemComponent } from './shopping-cart/edit-cart-item/edit-cart-
 import { CartItemComponent } from './shopping-cart/cart-item/cart-item.component';
 import { CartDetailComponent } from './shopping-cart/cart-detail/cart-detail.component';
 import { ContactUsComponent } from './shopping-cart/cart-detail/contact-us/contact-us.component';
+import { ItemQuickEditComponent } from './shopping-cart/cart-item/item-quick-edit/item-quick-edit.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ContactUsComponent } from './shopping-cart/cart-detail/contact-us/conta
     EditCartItemComponent,
     CartItemComponent,
     CartDetailComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    ItemQuickEditComponent
   ],
   imports: [
     BrowserModule,

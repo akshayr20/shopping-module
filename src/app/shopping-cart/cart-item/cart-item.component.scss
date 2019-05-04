@@ -2,6 +2,12 @@
   margin-bottom: 2rem;
 }
 
+.item-count {
+  border-top: 0.1rem solid #c5c4c4;
+  border-bottom: 0.4rem solid #c5c4c4;
+  padding: 1.6rem 0;
+}
+
 .item {
   display: flex;
   justify-content: space-evenly;
@@ -16,6 +22,7 @@
   }
   &__description {
     flex-basis: 25%;
+    align-self: stretch
   }
   &__size {
     flex-basis: 15%;

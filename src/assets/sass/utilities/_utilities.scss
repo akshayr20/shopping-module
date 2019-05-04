@@ -9,7 +9,7 @@
 }
 
 .u-lg-margin-bottom {
-  margin-bottom: 2.4rem;
+  margin-bottom: 3.2rem;
 }
 // border
 
@@ -27,6 +27,12 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.space-between-vertical-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 // color

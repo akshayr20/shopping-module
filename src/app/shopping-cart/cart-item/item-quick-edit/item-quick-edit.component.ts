@@ -1,14 +1,18 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { CartService } from '../../service/cart.service';
 
 @Component({
   selector: 'app-item-quick-edit',
   templateUrl: './item-quick-edit.component.html',
   styleUrls: ['./item-quick-edit.component.scss']
 })
-export class ItemQuickEditComponent implements OnInit {
+export class ItemQuickEditComponent {
   @Output() editItem$: EventEmitter<boolean> = new EventEmitter();
+  @Input() cartItem;
 
-  constructor() {}
+  constructor(private cartService: CartService) {}
 
-  ngOnInit() {}
+  removeItemFromCart() {
+    this.cartService.removeItemFromCart(this.cartItem.p_id);
+  }
 }

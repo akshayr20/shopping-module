@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,20 +12,9 @@ import { ContactUsComponent } from './shopping-cart/cart-detail/contact-us/conta
 import { ItemQuickEditComponent } from './shopping-cart/cart-item/item-quick-edit/item-quick-edit.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ShoppingCartComponent,
-    EditCartItemComponent,
-    CartItemComponent,
-    CartDetailComponent,
-    ContactUsComponent,
-    ItemQuickEditComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, ShoppingCartComponent, EditCartItemComponent, CartItemComponent, CartDetailComponent, ContactUsComponent, ItemQuickEditComponent],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

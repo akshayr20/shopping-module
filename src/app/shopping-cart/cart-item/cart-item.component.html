@@ -1,31 +1,34 @@
-<div class="item-count">
-  4 Items
-</div>
-<ng-container *ngFor="let item of cartItems">
-  <div class="item  u-tiny-border-bottom">
-    <div class="item__image">
-      <img [src]="item.img" [alt]="item.description" />
-    </div>
-    <div class="item__description">
-      <p [innerText]="item.description"></p>
-      <div class="space-between-vertical-flex">
-        <ul>
-          <li>Style: 123</li>
-          <li>Color: blue</li>
-        </ul>
-        <app-item-quick-edit (editItem$)="isEditPopUpVisible = true"></app-item-quick-edit>
+<div *ngIf="cartItems$ | async as cartItems">
+  <div class="item-count">{{ cartItems.length }} Items</div>
+  <ng-container *ngFor="let item of cartItems">
+    <div class="item  u-tiny-border-bottom">
+      <div class="item__image">
+        <img src="../../../assets/images/T3.jpg" [alt]="item.p_name" />
+      </div>
+      <div class="item__description">
+        <p [innerText]="item.p_name"></p>
+        <div class="space-between-vertical-flex">
+          <ul>
+            <li>Style: {{ item.p_style }}</li>
+            <li>Color: {{ item.p_selected_color.name }}</li>
+          </ul>
+          <app-item-quick-edit [cartItem]="item" (editItem$)="editItem(item)"></app-item-quick-edit>
+        </div>
+      </div>
+      <div class="item__size">
+        <span [innerText]="item.p_selected_size.code"></span>
+      </div>
+      <div class="item__qty">
+        <span [innerText]="item.p_quantity"></span>
+      </div>
+      <div class="item__price">
+        <span [innerText]="item.p_price"></span>
       </div>
     </div>
-    <div class="item__size">
-      <span [innerText]="item.size"></span>
-    </div>
-    <div class="item__qty">
-      <span [innerText]="item.qty"></span>
-    </div>
-    <div class="item__price">
-      <span [innerText]="item.price"></span>
-    </div>
-  </div>
-</ng-container>
+  </ng-container>
 
-<app-edit-cart-item *ngIf="isEditPopUpVisible"></app-edit-cart-item>
+  <app-edit-cart-item *ngIf="isEditPopUpVisible" (closePopUp$)="isEditPopUpVisible = false"></app-edit-cart-item>
+  <div *ngIf="!cartItems.length" class="no-products">
+    No Product In the carts
+  </div>
+</div>

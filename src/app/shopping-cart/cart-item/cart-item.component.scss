@@ -22,7 +22,7 @@
   }
   &__description {
     flex-basis: 25%;
-    align-self: stretch
+    align-self: stretch;
   }
   &__size {
     flex-basis: 15%;
@@ -37,4 +37,10 @@
   &__price {
     flex-basis: 15%;
   }
+}
+
+.no-products {
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 0.4rem solid #c5c4c4;
 }

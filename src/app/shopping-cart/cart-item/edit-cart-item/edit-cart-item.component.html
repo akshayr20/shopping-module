@@ -1,26 +1,24 @@
-<div class="popup">
+<div class="popup" *ngIf="cartItem$ | async as item">
   <div class="edit-cart-item">
-    <span class="close-btn">X</span>
+    <span class="close-btn" (click)="closePopUp$.emit(true)">X</span>
     <div class="center-flex half-width">
       <div class="item center-flex">
         <span class="item__name">
-          Paisely Jeans
+          {{ item.p_name }}
         </span>
-        <span class="item__price">
-          21$
-        </span>
+        <span class="item__price"> ${{ item.p_price }} </span>
         <span class="item__color">
           <span class="green-box"></span>
           <span class="white-box"></span>
         </span>
         <div class="item__dropdown-btn">
-          <select>
+          <select [(ngModel)]="quantity">
             <option>1</option>
             <option>2</option>
             <option>3</option>
           </select>
         </div>
-        <button class="ui-btn ui-btn__primary">EDIT</button>
+        <button class="ui-btn ui-btn__primary" (click)="updateItemQuantity(item.p_id)">Update</button>
         <span class="item__product-details">
           See product details
         </span>

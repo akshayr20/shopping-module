@@ -45,7 +45,7 @@
   }
 
   button {
-    width: 100% !important;
+    width: 100%;
   }
 
   &__product-details {
@@ -70,4 +70,5 @@
   top: 1rem;
   right: 2rem;
   color: grey;
+  cursor: pointer;
 }

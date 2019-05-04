@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartItems } from '../models/cartItems';
+import { Observable } from 'rxjs';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -7,10 +9,15 @@ import { CartItems } from '../models/cartItems';
   styleUrls: ['./cart-item.component.scss']
 })
 export class CartItemComponent implements OnInit {
-  @Input() cartItems: CartItems;
+  @Input() cartItems$: Observable<Array<CartItems>>;
   isEditPopUpVisible = false;
 
-  constructor() {}
+  constructor(private cartService: CartService) {}
 
   ngOnInit() {}
+
+  editItem(item) {
+    this.isEditPopUpVisible = true;
+    this.cartService.getItemById(item.p_id);
+  }
 }

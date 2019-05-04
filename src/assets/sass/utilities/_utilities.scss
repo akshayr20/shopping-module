@@ -1,3 +1,5 @@
+@import '../abstracts/variable';
+
 .u-sm-margin-left {
   margin-left: 0.8rem;
 }
@@ -9,9 +11,29 @@
 // border
 
 .u-tiny-border-bottom {
-  border-top: 0.1rem solid #c5c4c4;
+  border-bottom: 0.1rem solid #c5c4c4;
 }
 
 .u-md-border-bottom {
   border-bottom: 0.4rem solid #c5c4c4;
+}
+
+// flex-generic-class
+
+.center-flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+// color
+
+.text-color {
+  color: $color-text;
+}
+
+// padding
+
+.md-padding-vertical {
+  padding: 1.6rem 0;
 }

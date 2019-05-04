@@ -7,6 +7,7 @@
   background-color: white;
   border: 1px solid #979ea3;
   padding: 0.8rem 1.6rem;
+  text-transform: uppercase;
 
   &__primary {
     box-shadow: 0 4px 10px 1px rgba(37, 92, 183, 0.3);
@@ -14,5 +15,4 @@
     border-color: #4285f4;
     color: #ffffff;
   }
-
 }

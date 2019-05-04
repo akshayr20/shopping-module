@@ -1,0 +1,13 @@
+@import '../abstracts/variable';
+
+.default-input-box {
+  border: 1px solid #aaa;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 0 1.6rem;
+  width: 100%;
+  outline: none;
+  height: 100%;
+  color: $color-text;
+  font-size: $default-font-size;
+}
